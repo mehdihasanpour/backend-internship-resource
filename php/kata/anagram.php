@@ -11,17 +11,22 @@ function is_anagram(string $s1, string $s2): bool
     return $s1 === $s2;
 }
 
-
-function is_anagram2(string $s1, $s2): bool
+function is_anagram3(string $s1, $s2): bool
 {
     // Home work: complete the function using count_chars bultin function
-    $s1 = count_chars($s1, 3);
+    //we assume that all the character are lowercase
+    $sum = 0;
+    foreach (str_split($s1) as $value) {
+        $sum += ord("$value");
+    }
+    foreach (str_split($s2) as $value) {
+        $sum -= ord("$value");
+    }
+    if ($sum == 0) {
+        return true;
+    }
 
-    $s2 = count_chars($s2, 3);
-
-    return $s1 == $s2;
+    return false;
 }
 
-
-// var_dump(is_anagram('Public relations', 'Capture billions'));
-
+var_dump(is_anagram3('public relations', 'capture billions'));

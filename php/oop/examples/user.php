@@ -4,12 +4,12 @@ class User
 
     public function __construct(public string $email)
     {
-        $this->changeEmail($email);
+        $this->setEmail($email);
 
 }
 
 
-    public function changeEmail( string $email)
+    public function setEmail( string $email)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL))
         {
@@ -22,7 +22,7 @@ class User
 }
 $essie= new User('kmskartel@gmail.com');
 
-//$essie->changeEmail('go##nzel.com');
+//$essie->setEmail('go##nzel.com');
 
 
 var_dump($essie);

@@ -1,29 +1,25 @@
-# OOP assignments
+# ✍️ OOP assignments
 
 Below titles are just funny, **More stars = More complexity**. Feel free to ask your questions
-### A Valid user `*`
-Create a `User` class that has an email property. The email property must be a valid email address. The user has the ability to change email
----
+## 📧 A Valid user `*`
+Create a `User` class that has an email property. The email property must be a valid email address. The user has the ability to change email address.
 
-### Request time
+## 📡 Request time `*`
 Create a request class, it provides below methods:
 - get(string $url): void
 - post(string $url): void
 - countOfCalls(): void
 - countOfCallFor(string $method): int
----
 
-### Zoobject `**`
-We're in a zoo, let's help them with OOP. There are some Animals, each animal could move, has its own sound, they may be wild or domestic, some of them could given birth (parturition). Wild animals could hunt only wild animals
----
+## 🦍 Zoobject `**`
+We're in a zoo, let's help them with OOP.
+There are some Animals, each animal could move, has its own sound, they may be wild or domestic, some of them could given birth (parturition). Wild animals could hunt only wild animals
 
-### How a singleton object works? How to implement a singleton? `***`
----
+## 1️⃣ How a singleton object works? How to implement a singleton? `***`
+## 📰 Easy kind of medium!
+> Below scenario has shared to next 3 assignments in 3 different levels
 
-### Easy kind of medium!
-> Below scenario has shared to next 3 assignments in 3 different levels:
-
-Create a Post class, Each post has a title, content, and author. Every post has many comments and we should be able to add a comment to each post. You may implement the assignment in 3 levels of complexity:
+Create a Post class, Each post has title, content, and author. Every post has many comments and we should be able to add comments to each post. You may implement the assignment in 3 levels of complexity:
 
 - **Level I** `*`
     - Each comment is a string

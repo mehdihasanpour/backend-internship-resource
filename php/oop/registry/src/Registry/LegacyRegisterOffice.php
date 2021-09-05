@@ -15,6 +15,7 @@ use App\Person\IdentifierFactory;
 class LegacyRegisterOffice implements RegisterOffice
 {
     private array $people = [];
+	private array $changedNamedPeople = [];
 
     public function __construct(private IdentifierFactory $idFactory) {}
 
@@ -28,9 +29,14 @@ class LegacyRegisterOffice implements RegisterOffice
 
     public function changeName(PersonalIdentifier $id, string $newName): void
     {
+		   if (isset($this->changedNamedPeople[$id->value()]) && $this->changedNamedPeople[$id->value()] == true){
+        throw new \Exception("Not allowed to change the name twice");
+    }
+	
         foreach ($this->people as $index => $person) {
             if ($id->value() === $person->id()->value()) {
                 $this->people[$index] = new IdentifiedPerson($person->id(), $newName);
+				$this->changedNamedPeople[$id->value()] = true;
                 return;
             }
         }

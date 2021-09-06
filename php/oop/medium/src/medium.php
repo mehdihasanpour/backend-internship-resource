@@ -1,26 +1,46 @@
 <?php
 
+class User 
+{
+    public function __construct(private string $email)
+    {
+        $this->setEmail($email);
+    }
+
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email){
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            throw new Exception('invalid email address.');
+        }
+        $this->email = $email;
+    }
+}
+
 class Post
 {
     public function __construct(
         private string $title,
         private string $content,
         private string $author,
-        private array $comment = []
+        private Comment $comment
     ) {
     }
 
-    public function addComment(string $string): array
-    {
-       $this->comment[] = $string; 
-       return $this->comment;
+}
+
+class Comment
+{
+    public function __construct(
+        private string $user,
+        private string $content,
+        private DateTimeImmutable $submitedAt
+    ) {
     }
 }
 
-$post1 = new Post('this is a title', 'lorem', 'mehdi');
-$new_commetn = $post1->addComment('this is comment');
-var_dump($post1);
-
-$post2 = new Post('title for post 2', 'content for post 2', 'ali');
-$post2->addComment('commetn for post 2');
-var_dump($post2);
+$user1 = new User('mehdi@yahoo.com');
+var_dump($user1);

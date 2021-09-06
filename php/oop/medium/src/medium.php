@@ -15,15 +15,32 @@ class Post
        $this->comments[] = $string;
     }
 
-    public function showPostItem(string $requested_item)
+    public function getTitle()
     {
-        return $this->$requested_item;
+        return $this->title;
     }
+
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
 }
 
 $post1 = new Post('this is a title', 'lorem', 'mehdi');
 $post1->addComment('this is comment');
-$post_data = $post1->showPostItem('comments');
+// $post_data = $post1->getTitle();
+$post_data = $post1->getComments();
 var_dump($post_data);
 
 // $post2 = new Post('title for post 2', 'content for post 2', 'ali');

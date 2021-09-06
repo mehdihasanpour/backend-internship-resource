@@ -13,6 +13,11 @@ abstract class Animal
     }
 }
 
+class wildAnimal extends Animal
+{
+
+}
+
 trait givingbirth
 {
     public function parturition()
@@ -42,9 +47,10 @@ class Dog extends Animal
     }
 
     use givingbirth;
+    use hunting;
 }
 
-class Wolf extends Animal
+class Wolf extends WildAnimal
 {
     public function move()
     {
@@ -60,14 +66,27 @@ class Wolf extends Animal
     use givingbirth;
 }
 
-$dog = new dog();
+
 $wolf = new wolf();
-var_dump($dog->parturition());
-var_dump($wolf->hunt());
+
+if (is_subclass_of($wolf, 'WildAnimal')) {
+    var_dump($wolf->hunt());
+} else {
+
+    throw new Exception('this animal cannot hunt');
+}
 var_dump($wolf->makeSound());
-var_dump($dog->makeSound());
-var_dump($dog->move());
 var_dump($wolf->move());
+$dog = new dog();
+var_dump($dog->makeSound());
+var_dump($dog->parturition());
+var_dump($dog->move());
+if (is_subclass_of($dog, 'WildAnimal')) {
+    var_dump($dog->hunt());
+} else {
+
+    throw new Exception('this animal cannot hunt');
+}
 
 
 ?>

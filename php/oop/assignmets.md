@@ -13,7 +13,7 @@ Create a request class, it provides below methods:
 
 ## 🦍 Zoobject `**`
 We're in a zoo, let's help them with OOP.
-There are some Animals, each animal could move, has its own sound, they may be wild or domestic, some of them could given birth (parturition). Wild animals could hunt only wild animals
+There are some Animals, each animal could move, has its own sound, they may be wild or domestic, some of them could given birth (parturition). Wild animals could hunt domestic animals
 
 ## 1️⃣ How a singleton object works? How to implement a singleton? `***`
 ## 📰 Easy kind of medium!

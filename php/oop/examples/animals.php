@@ -18,7 +18,7 @@ class wildAnimal extends Animal
 
 }
 
-trait givingbirth
+trait Givingbirth
 {
     public function parturition()
     {
@@ -26,7 +26,7 @@ trait givingbirth
     }
 }
 
-trait hunting
+trait Hunting
 {
     public function hunt()
     {
@@ -36,6 +36,9 @@ trait hunting
 
 class Dog extends Animal
 {
+    use givingbirth;
+    use hunting;
+
     public function makeSound()
     {
         return "haw haw";
@@ -46,12 +49,13 @@ class Dog extends Animal
         return "dog moves like a dog";
     }
 
-    use givingbirth;
-    use hunting;
+
 }
 
 class Wolf extends WildAnimal
 {
+    use hunting;
+    use givingbirth;
     public function move()
     {
         return "wolf moves like a wolf";
@@ -62,8 +66,7 @@ class Wolf extends WildAnimal
         return "howling";
     }
 
-    use hunting;
-    use givingbirth;
+
 }
 
 

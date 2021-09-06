@@ -2,7 +2,7 @@
 class User
 {
 
-    public function __construct(public string $email)
+    public function __construct(string $email)
     {
         $this->setEmail($email);
 

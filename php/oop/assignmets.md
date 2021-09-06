@@ -8,7 +8,7 @@ Create a `User` class that has an email property. The email property must be a v
 Create a request class, it provides below methods:
 - get(string $url): void
 - post(string $url): void
-- countOfCalls(): void
+- countOfCalls(): int
 - countOfCallFor(string $method): int
 
 ## 🦍 Zoobject `**`

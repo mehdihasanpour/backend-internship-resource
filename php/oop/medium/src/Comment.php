@@ -10,6 +10,7 @@ class Comment
         protected int $id,
         protected string $user,
         protected string $content,
+        protected int $like = 0,
         protected DateTimeImmutable $submitedAt
     ) {
     }
@@ -33,4 +34,14 @@ class Comment
     {
         return $this->submitedAt;
     } 
+
+    public function Like()
+    {
+        $this->like++;
+    }
+
+    public function DisLike()
+    {
+        $this->like--;
+    }
 }

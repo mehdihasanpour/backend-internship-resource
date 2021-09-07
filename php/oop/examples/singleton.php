@@ -10,7 +10,7 @@ class Singleton
     // to prevent initiation with outer code.
     private function __construct()
     {
-        
+
     }
 
     // The object is created from within the class itself

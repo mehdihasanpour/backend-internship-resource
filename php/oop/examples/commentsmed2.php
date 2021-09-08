@@ -44,7 +44,7 @@ class Post
     {
     }
 
-    public function addComment( Comment $comment)
+    public function addComment(Comment $comment)
     {
 
         $this->comments[] = $comment;
@@ -68,9 +68,9 @@ class Post
 $user = new User('hooshi@gmail.com');
 $date = new DateTimeImmutable('2026-09-13');
 $comment = new Comment(1, 'comment commment comment comment', $user, $date);
-$post = new Post(1,$user, 'nocontetn', 'notil');
-$post->addComment( $comment);
-$post->removeComment(1);
+$post = new Post(1, $user, 'nocontetn', 'notil');
+$post->addComment($comment);
+//$post->removeComment(1);
 
 
 var_dump($post);

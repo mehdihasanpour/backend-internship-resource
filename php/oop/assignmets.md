@@ -8,12 +8,12 @@ Create a `User` class that has an email property. The email property must be a v
 Create a request class, it provides below methods:
 - get(string $url): void
 - post(string $url): void
-- countOfCalls(): void
+- countOfCalls(): int
 - countOfCallFor(string $method): int
 
 ## 🦍 Zoobject `**`
 We're in a zoo, let's help them with OOP.
-There are some Animals, each animal could move, has its own sound, they may be wild or domestic, some of them could given birth (parturition). Wild animals could hunt only wild animals
+There are some Animals, each animal could move, has its own sound, they may be wild or domestic, some of them could given birth (parturition). Wild animals could hunt domestic animals
 
 ## 1️⃣ How a singleton object works? How to implement a singleton? `***`
 ## 📰 Easy kind of medium!
